@@ -1,0 +1,39 @@
+package com.rays.dao;
+
+import java.util.List;
+
+import com.rays.dto.CarDTO;
+
+public class CarDAOImpl  implements CarDAOInt{
+
+	@Override
+	public long add(CarDTO dto) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void update(CarDTO dto) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(CarDTO dto) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public CarDTO findbyPk(long pk) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List search(CarDTO dto, int pageNo, int pageSize) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

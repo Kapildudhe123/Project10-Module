@@ -1,0 +1,16 @@
+package com.rays.form;
+
+import java.util.Date;
+
+public class CarForm {
+
+	public String ownerName;
+
+	public String carName;
+
+	public String model;
+
+	public Date purchaseDate;
+
+	public Long price;
+}
