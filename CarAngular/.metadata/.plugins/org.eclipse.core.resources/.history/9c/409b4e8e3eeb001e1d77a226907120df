@@ -1,8 +1,0 @@
-package com.rays.service;
-
-import org.springframework.stereotype.Repository;
-
-
-public class CarServiceImpl implements CarServiceInt {
-
-}
