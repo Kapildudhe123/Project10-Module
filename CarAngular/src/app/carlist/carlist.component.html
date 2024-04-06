@@ -1,0 +1,48 @@
+<app-navbaar></app-navbaar>
+<hr>
+<h2>car-list</h2>
+{{form.message}}
+<div>
+    <select name="id" [(ngModel)]="form.search.id">
+        <option [ngValue]="" value="undefined">{{'------SELECT PURCHASEDATE-------' }}</option>
+        <option *ngFor="let obj of form.preload" [value]="obj.key">{{obj.value}}</option>
+    </select>
+    &nbsp;
+    <input type="text" placeholder="ENTER CARNAME" [(ngModel)]="form.search.carName">
+    &nbsp;
+    <button (click)="search()">Search</button>&nbsp;
+    <button (click)="delete()">Delete</button>
+</div>
+<br>
+<table border="1">
+    <tr>
+        <th>SELECT</th>
+        <th>IMAGE</th>
+        <th>id</th>
+        <th>OWNERNAME</th>
+        <th>CARNAME</th>
+        <th>MODEL</th>
+        <th>PURCHASEDATE</th>
+        <th>PRICE</th>
+        <th>EDIT</th>
+
+    </tr>
+    <tr *ngFor=" let  m  of form.list let i=index">
+        <td><input type="checkbox" (change)="onCheckboxChange(m.id)"></td>
+        <td><img src="http://localhost:8080/car/profilePic/{{m.id}}" height="55px" width="80px"></td>
+        <td>{{(form.pageNo*5)+i+1}}</td>
+        <td>{{m.ownerName}}</td>
+        <td>{{m.carName}}</td>
+        <td>{{m.model}}</td>
+        <td>{{m.purchaseDate}}</td>
+        <td>{{m.price}}</td>
+        <td><a (click)="edit('/car/'+ m.id)" style="color: blue;">Edit</a></td>
+
+    </tr>
+    <tr>
+        <td><button [disabled]="form.pageNo==0" (click)="previous()">previous</button></td>
+        <td><button [disabled]="form.list.length < 5" (click)="next()">next</button></td>
+    </tr>
+
+
+</table>
